@@ -10,6 +10,36 @@ $ docker-compose up --build
 $ docker-compose run test
 ```
 
+## Criar Contrato:
+```sh
+POST /api/v1/contratos/
+```
+### Esquema de criação de contrato
+```json
+{
+    "data_emissao": "2025-01-18",
+    "data_nascimento_tomador": "2001-09-03",
+    "valor_desembolsado": 10000.00,
+    "numero_documento": "12345678901",
+    "endereco_pais": "Brasil",
+    "endereco_estado": "SP",
+    "endereco_cidade": "São Paulo",
+    "numero_telefone": "+5511999999999",
+    "taxa_contrato": 5.5,
+    "parcelas": [
+        {
+            "numero_parcela": 1,
+            "valor_parcela": 500.00,
+            "data_vencimento": "2025-02-18"
+        },
+        {
+            "numero_parcela": 2,
+            "valor_parcela": 500.00,
+            "data_vencimento": "2025-03-18"
+        }
+    ]
+}
+```
 ## Consulta/Filtros dos Contratos:
 Buscar por ID do contrato:
 ```sh
